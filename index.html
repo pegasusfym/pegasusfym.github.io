@@ -8,6 +8,10 @@
     <style>
         :root {
             --primary-green: #2d7a2d;
+            .text-green {
+    color: #2d7a2d !important;
+    font-weight: 600; /* Optional: makes green numbers slightly easier to read */
+}
             --text-dark: #1a1a1a;
             --text-gray: #666;
             --text-red: #d93025;
@@ -114,50 +118,52 @@ const CONFIG = {
     topImageSrc: "Top1.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance: 13468060.52,
-    gainLossText: "-$198,090.20 (-1.45%)",
-    isNegative: true,
+    currentBalance: 13488959.72,
+    gainLossText: "$20889.20 (0.16%)",
+    isNegative: false,
 
     TABLES: [
         {
             id: "table1_container",
-            title: "Individual WROS-TOD X64905342",
-            cashName: "Cash",
-            cashDesc: "HELD IN MONEY MARKET",
+            title: "Individual WROS-TOD ",
+            cashName: "X64905342 $8,977,101.62",
+            //cashName: "Cash",
+            //cashDesc: "HELD IN MONEY MARKET",
             positions: [
                 {
                     symbol: "NVDA",
                     sub: "NVIDIA CORPRATION",
                     qty: "48560",
-                    lastPrice: "$185.04",
-                    priceSub: "-$4.07",
+                    lastPrice: "$184.86",
+                    priceSub: "-$0.28",
                     costBasis: "$87.65",
-                    todayGL: "-$197,635.20",
-                    todayGLP: "-2.15%"
+                    todayGL: "-$8740.80",
+                    todayGLP: "-0.10%"
                 }
             ],
-            totalGL: "-$197,635.2",
-            totalGLP: "-2.15%"
+            totalGL: "-$8740.80",
+            totalGLP: "-0.10%"
         },
         {
             id: "table2_container",
-            title: "Individual WROS-TOD X64905832",
-            cashName: "Cash",
-            cashDesc: "HELD IN MONEY MARKET",
+            title: "Individual WROS-TOD ",
+            cashName: "X64905832 $4,511,858.10",
+            //cashName: "Cash",
+            //cashDesc: "HELD IN MONEY MARKET",
             positions: [
                 {
                     symbol: "SPY",
                     sub: "SPDR S&P 500 ETF Trust",
                     qty: "6500",
-                    lastPrice: "$689.51",
-                    priceSub: "-$0.07",
-                    costBasis: "$150.00",
-                    todayGL: "-$455.00",
-                    todayGLP: "-0.01%"
+                    lastPrice: "$694.07",
+                    priceSub: "$4.56",
+                    costBasis: "$505.63",
+                    todayGL: "$29640.00",
+                    todayGLP: "0.66%"
                 }
             ],
-            totalGL: "-$455.00",
-            totalGLP: "-0.01%"
+            totalGL: "$29640.00",
+            totalGLP: "0.66%"
         }
     ]
 };
@@ -166,18 +172,41 @@ const CONFIG = {
    LOGIC SECTION
 ======================================================== */
 
+function getColorClass(valStr) {
+
+    // Check if the string contains a plus sign
+    if (valStr.includes('+')) {
+        return 'text-green';
+    } 
+    // If not a plus, check if it contains a minus sign
+    else if (valStr.includes('-')) {
+        return 'text-red';
+    } 
+    // If neither is found, return an empty string (no special color)
+    else {
+        return 'text-green';
+    }
+}
+
 function renderTables() {
     CONFIG.TABLES.forEach(t => {
         const container = document.getElementById(t.id);
-        let rowsHtml = t.positions.map(p => `
-            <tr>
-                <td class="col-symbol"><div class="font-bold">${p.symbol}</div><span class="sub-text">${p.sub}</span></td>
-                <td class="col-data text-right">${p.qty}</td>
-                <td class="col-data text-right">${p.lastPrice}<span class="sub-text text-red">${p.priceSub}</span></td>
-                <td class="col-data text-right">${p.costBasis}</td>
-                <td class="col-data text-right text-red">${p.todayGL}<span class="sub-text">${p.todayGLP}</span></td>
-            </tr>
-        `).join('');
+        let rowsHtml = t.positions.map(p => {
+             const priceSubColor = getColorClass(p.priceSub);
+             const glColor = getColorClass(p.todayGL);
+        
+             return `
+           	 <tr>
+                	<td class="col-symbol"><div class="font-bold">${p.symbol}</div><span class="sub-text">${p.sub}</span></td>
+               		<td class="col-data text-left">${p.qty}</td>
+                	<td class="col-data text-left">${p.lastPrice}<span class="sub-text ${glColor}">${p.priceSub}</span></td>
+                	<td class="col-data text-left">${p.costBasis}</td>
+                	<td class="col-data text-left ${glColor}">${p.todayGL}<span class="sub-text ${glColor}">${p.todayGLP}</span></td>
+           	 </tr>
+       	 `;
+        }).join('');
+
+        const totalColor = getColorClass(t.totalGL);
 
         // Wrapped in .table-scroll-wrapper
         container.innerHTML = `
@@ -195,13 +224,13 @@ function renderTables() {
                     <tbody>
                         <tr><td colspan="5" class="acc-header font-bold">${t.title}</td></tr>
                         <tr>
-                            <td colspan="4"><div class="font-bold">${t.cashName}</div><span class="sub-text">${t.cashDesc}</span></td>
+                            <td colspan="4"><div class="font-bold">${t.cashName}</div></td>
                             <td></td>
                         </tr>
                         ${rowsHtml}
                         <tr class="total-row">
                             <td colspan="4">Account total</td>
-                            <td class="text-right text-red">${t.totalGL}<div class="sub-text">${t.totalGLP}</div></td>
+                            <td class="text-left ${totalColor}">${t.totalGL}<div class="sub-text ${totalColor}">${t.totalGLP}</div></td>
                         </tr>
                     </tbody>
                 </table>
