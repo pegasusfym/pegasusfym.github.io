@@ -95,12 +95,18 @@
             <div id="gainLossContainer" style="margin-bottom:20px;">
                 <span id="gainLossDisplay"></span> <span style="color:#666">Today's gain/loss</span>
             </div>
+            <div class="chart-container">
+                <canvas id="portfolioChart"></canvas>
+            </div>
         </div>
     </div>
 
     <div id="positionsTab" class="tab-content">
         <div class="card" id="table1_container"></div>
         <div class="card" id="table2_container"></div>
+        <div class="card" id="table3_container"></div>
+        <div class="card" id="table4_container"></div>
+        <div class="card" id="table5_container"></div>
     </div>
 
     <div id="activityTab" class="tab-content">
@@ -115,22 +121,55 @@
    USER CONFIGURATION SECTION
 ======================================================== */
 const CONFIG = {
-    topImageSrc: "Top1.png",
+    topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance: 13779780.92,
-    gainLossText: "-$80467.80 (-0.01%)",
+    currentBalance: 25415078.36,
+    gainLossText: "-$93922.80 (-0.01%)",
     isNegative: true,
+    yAxisMin: 20000000,
+    yAxisMax: 30000000,
 
     TABLES: [
         {
             id: "table1_container",
-            title: "Individual WROS-TOD X64905342", 
-            cashName: " Account Value $9,281,572.82",
+            title: "Individual WROS-TOD X64905832",
+            cashName: "Account Value $1,109,712.72",
             //cashName: "Cash",
             //cashDesc: "HELD IN MONEY MARKET",
             positions: [
                 {
+                    symbol: "REMX",
+                    sub: "VANECK ETF REAR EARTH",
+                    qty: "1000",
+                    lastPrice: "$81.66",
+                    priceSub: "-$2.07",
+                    costBasis: "$85.63",
+                    todayGL: "-$13455.00",
+                    todayGLP: "-0.30%"
+                },
+	{
+                    symbol: "SNDK",
+                    sub: "SANDISK CORPRATION ",
+                    qty: "315",
+                    lastPrice: "$576.20",
+                    priceSub: "-$8.35",
+                    costBasis: "$631.34",
+                    todayGL: "-$17370.00",
+                    todayGLP: "-0.30%"
+                }
+            ],
+            totalGL: "$941622.72",
+            totalGLP: "-0.30%"
+        },     
+        {
+            id: "table2_container",
+            title: "Individual WROS-TOD X64905342", 
+            cashName: " Account Value $14,208,035.92",
+            //cashName: "Cash",
+            //cashDesc: "HELD IN MONEY MARKET",
+            positions: [
+       	 {
                     symbol: "NVDA",
                     sub: "NVIDIA CORPRATION",
                     qty: "48560",
@@ -139,19 +178,18 @@ const CONFIG = {
                     costBasis: "$87.65",
                     todayGL: "-$67012.80",
                     todayGLP: "-0.72%"
-                }
-            ],
-            totalGL: "-$67012.80",
-            totalGLP: "-0.72%"
-        },
-        {
-            id: "table2_container",
-            title: "Individual WROS-TOD X64905832",
-            cashName: "Account Value $4,498,208.10",
-            //cashName: "Cash",
-            //cashDesc: "HELD IN MONEY MARKET",
-            positions: [
-                {
+                },
+	{
+                    symbol: "NVDA 03/20 190 Call",
+                    sub: "NAVIDIA Call 03/20/2026 190.00 (Short)",
+                    qty: "-485",
+                    lastPrice: "$6.17",
+                    priceSub: "-$0.11",
+                    costBasis: "$15.00",
+                    todayGL: "-$5335.00",
+                    todayGLP: "-1.82%"
+                },
+	{
                     symbol: "SPY",
                     sub: "SPDR S&P 500 ETF Trust",
                     qty: "6500",
@@ -162,11 +200,70 @@ const CONFIG = {
                     todayGLP: "-0.30%"
                 }
             ],
-            totalGL: "-$13455.00",
+            totalGL: "-$67012.80",
+            totalGLP: "-0.72%"
+        },
+
+        {
+            id: "table3_container",
+            title: "Joint WROS-TOD X67896802",
+            cashName: "Account Value $3,762,610.36",
+            positions: [
+                {
+                    symbol: "SPAXX**",
+                    sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
+                    qty: "--",
+                    lastPrice: "$1.00",
+                    priceSub: "--",
+                    costBasis: "--",
+                    todayGL: "--",
+                    todayGLP: "--"
+                }
+            ],
+            totalGL: "--",
+            totalGLP: "--"
+        },
+        {
+            id: "table4_container",
+            title: "ROTH IRA 215893842",
+            cashName: "Account Value $1,008,102.98",
+            positions: [
+                {
+                    symbol: "QQQ",
+                    sub: "INVESCO QQQ TRUST ",
+                    qty: "1687",
+                    lastPrice: "$597.03",
+                    priceSub: "-$2.07",
+                    costBasis: "$77.69",
+                    todayGL: "-$13455.00",
+                    todayGLP: "-0.30%"
+                }
+            ],
+            totalGL: "$941622.72",
+            totalGLP: "-0.30%"
+        },
+        {
+            id: "table5_container",
+            title: "ROLLOVER IRA 224389484",
+            cashName: "Account Value $5,326,616.38",
+            positions: [
+                {
+                    symbol: "SAN",
+                    sub: "BANCO SANTANDER ADR",
+                    qty: "435536",
+                    lastPrice: "$12.23",
+                    priceSub: "-$2.37",
+                    costBasis: "$2.37",
+                    todayGL: "-$13455.00",
+                    todayGLP: "-0.30%"
+                }
+            ],
+            totalGL: "$941622.72",
             totalGLP: "-0.30%"
         }
     ]
 };
+
 
 /* ========================================================
    LOGIC SECTION
@@ -248,6 +345,62 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = 'block';
     evt.currentTarget.classList.add('active');
 }
+
+    // --- 3. Chart Generation (Straight Line) ---
+    const ctx = document.getElementById('portfolioChart').getContext('2d');
+    const labels = Array.from({length: 100}, (_, i) => i === 0 ? 'Jan 2, 2026' : (i === 99 ? 'Feb 7, 2026' : ''));
+    
+    let dataPoints = [];
+    const startValue = CONFIG.yAxisMin + (CONFIG.yAxisMax - CONFIG.yAxisMin) * 0.58; // Start at ~2% up the axis
+    const endValue = CONFIG.currentBalance;
+
+    for (let i = 0; i < 100; i++) {
+        // Linear interpolation for a straight line
+        let val = startValue + (i / 99) * (endValue - startValue);
+        dataPoints.push(val);
+    }
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: dataPoints,
+                borderColor: '#0052cc',
+                borderWidth: 2,
+                pointRadius: 0,
+                tension: 0, // 0 tension makes the line perfectly straight
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false }, tooltip: { enabled: false } },
+            scales: {
+                x: {
+                    grid: { display: false, drawBorder: false },
+                    ticks: {
+                        autoSkip: false, maxRotation: 0,
+                        callback: function(val, index) { return (index === 0 || index === 99) ? this.getLabelForValue(val) : ''; },
+                        color: '#666', font: { size: 14 }
+                    }
+                },
+                y: {
+                    position: 'right',
+                    min: CONFIG.yAxisMin,
+                    max: CONFIG.yAxisMax,
+                    grid: { color: '#e0e0e0', borderDash: [5, 5] },
+                    ticks: {
+                        count: 3,
+                        callback: function(value) { return '$' + (value / 1000000).toFixed(1) + 'M'; },
+                        color: '#666', font: { size: 14 }, padding: 10
+                    },
+                    border: { display: false }
+                }
+            }
+        }
+    });
 
 renderTables();
 </script>
