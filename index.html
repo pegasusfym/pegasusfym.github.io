@@ -76,12 +76,22 @@
         
         .tab-content { display: none; }
         .tab-content.active { display: block; }
+        
+         /* Activity Tab: Search and Vertical List */
+        .search-container { padding: 12px; display: flex; gap: 10px; background: #fff; border-bottom: 1px solid var(--border-color); }
+        .search-bar { flex: 1; padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
+        .filter-btn { padding: 8px 15px; border: 1px solid var(--link-blue); color: var(--link-blue); border-radius: 4px; background: none; font-weight: 600; }
+        .section-dropdown { padding: 15px; border-bottom: 1px solid var(--border-color); font-weight: 700; font-size: 16px; display: flex; align-items: center; }
+        .activity-item { padding: 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: flex-start; }
+        .activity-main { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+        .activity-meta { color: #888; font-size: 12px; }
+        .info-box { background-color: #f0f4f9; padding: 10px 15px; margin: 10px; border-radius: 4px; font-size: 13px; color: var(--link-blue); display: flex; gap: 10px; }
     </style>
 </head>
 <body>
 
 <div class="main-wrapper">
-    <img id="topImg" class="static-img" src="Top1.png">
+    <img id="topImg" class="static-img" src="Top.jpg">
 
     <div class="tabs-nav">
         <button class="tab-btn active" onclick="openTab(event, 'summaryTab')">Summary</button>
@@ -109,8 +119,21 @@
         <div class="card" id="table5_container"></div>
     </div>
 
-    <div id="activityTab" class="tab-content">
-        <div class="card" style="padding:0"><img id="activityImg" class="static-img" src="IMG_E2202.JPG"></div>
+<div id="activityTab" class="tab-content active">
+        <div class="card">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search Activity">
+                <button class="filter-btn">Filter</button>
+            </div>
+
+            <div class="section-dropdown"><span>∨</span> Pending</div>
+            <div id="pending_list">
+                </div>
+            
+            <div class="section-dropdown" style="border-top: 1px solid var(--border-color)"><span>∨</span> Past 30 days</div>
+            <div id="activity_list">
+                </div>
+        </div>
     </div>
 
     <img id="bottomImg" class="static-img" src="Bottom.png">
@@ -129,7 +152,15 @@ const CONFIG = {
     isNegative: true,
     yAxisMin: 20000000,
     yAxisMax: 30000000,
-
+    PENDING: [],
+    ACTIVITY:  [
+        { type: "YOU BOUGHT", symbol: "SANDISK CORP COM (SNDK) (Margin)", date: "Feb-06-2026", account: "Individual - TOD ***5832", amount: "-$95,073.00" },
+        { type: "YOU SOLD", symbol: "UNITED STS OIL FD LP UNITS (USO) (Cash)", date: "Feb-04-2026", account: "Individual - TOD ***5832", amount: "+$118,320.00" },
+        { type: "YOU BOUGHT", symbol: "SANDISK CORP COM (SNDK) (Margin)", date: "Feb-03-2026", account: "Individual - TOD ***5832", amount: "-$103,800.00" },
+        { type: "YOU BOUGHT", symbol: "VANECK ETF TRUST RARE AND S(REMX)(Cash)", date: "Feb-02-2026", account: "Individual - TOD ***5832", amount: "-$85,630.00" },
+        { type: "YOU BOUGHT", symbol: "UNITED STS OIL FD LP UNITS (USO) (Cash)", date: "Feb-02-2026", account: "Individual - TOD ***5832", amount: "-$112,980.00" },
+        { type: "YOU SOLD OPEN", symbol: "NAVIDIA Call 03/20/2026 190.00", date: "Jan-29-2026", account: "Individual - TOD ***5342", amount: "+$727,500.00" }
+    ],
     TABLES: [
         {
             id: "table1_container",
@@ -234,7 +265,7 @@ const CONFIG = {
                     qty: "1687",
                     lastPrice: "$597.03",
                     priceSub: "-$2.07",
-                    costBasis: "$77.69",
+                    costBasis: "$403.69",
                     todayGL: "-$13455.00",
                     todayGLP: "-0.30%"
                 }
@@ -248,7 +279,7 @@ const CONFIG = {
             cashName: "Account Value $5,326,616.38",
             positions: [
                 {
-                    symbol: "SAN",
+                    symbol: "GS",
                     sub: "BANCO SANTANDER ADR",
                     qty: "435536",
                     lastPrice: "$12.23",
@@ -402,7 +433,29 @@ function openTab(evt, tabName) {
         }
     });
 
+function renderActivity() {
+    const pendingTarget = document.getElementById('pending_list');
+    const activityTarget = document.getElementById('activity_list');
+
+    if (pendingTarget) {
+        pendingTarget.innerHTML = CONFIG.PENDING.map(p => `
+            <div class="activity-item">
+                <div><div class="activity-main">${p.main}</div><div class="activity-meta">${p.date} &nbsp; ${p.account}</div></div>
+                <div class="text-right">${p.status}</div>
+            </div>`).join('');
+    }
+
+    if (activityTarget) {
+        activityTarget.innerHTML = CONFIG.ACTIVITY.map(a => `
+            <div class="activity-item">
+                <div><div class="activity-main">${a.type} ${a.symbol}</div><div class="activity-meta">${a.date} &nbsp; ${a.account}</div></div>
+                <div class="text-right ${getColorClass(a.amount)}">${a.amount}</div>
+            </div>`).join('');
+    }
+}
+
 renderTables();
+renderActivity();
 </script>
 </body>
 </html>
