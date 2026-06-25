@@ -103,7 +103,7 @@
         <div class="card">
             <h1 id="balanceDisplay" class="balance-text"></h1>
             <div id="gainLossContainer" style="margin-bottom:20px;">
-                <span id="gainLossDisplay"></span> <span style="color:#666">Today's gain/loss</span>
+                <span style="color:#666">Today's gain/loss</span><span id="gainLossDisplay"></span> 
             </div>
             <div class="chart-container">
                 <canvas id="portfolioChart"></canvas>
@@ -147,11 +147,11 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:40807357.59,
-    gainLossText: "$365,471.47 (0.90%)",
+    currentBalance:48464083.55,
+    gainLossText: "$7,656,725.96 (18.76%)",
     isNegative: false,
     yAxisMin: 20000000,
-    yAxisMax: 45000000,
+    yAxisMax: 50000000,
     PENDING: [],
     ACTIVITY:  [
         { type: "YOU BOUGHT", symbol: "SANDISK CORPRATION(SNDK)", date: "Jun-05-2026", account: "Individual - TOD ***5342", amount: "-$10,478,736.40" },
@@ -420,7 +420,8 @@ function openTab(evt, tabName) {
         { date: 'Mar 10, 2026', value: 27000000 },
         { date: 'Apr 25, 2026', value: 35500000 },
         { date: 'May 18, 2026', value: 34200000 },
-        { date: 'Jun 12, 2026', value: CONFIG.currentBalance }
+        { date: 'Jun 24, 2026', value: 40800000 },
+        { date: 'Jun 25, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -449,7 +450,7 @@ function openTab(evt, tabName) {
     const totalDays = 164;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Jun 12, 2026';
+        if (i === totalDays - 1) return 'Jun 25, 2026';
         return ''; 
     });
 
