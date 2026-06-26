@@ -103,7 +103,7 @@
         <div class="card">
             <h1 id="balanceDisplay" class="balance-text"></h1>
             <div id="gainLossContainer" style="margin-bottom:20px;">
-                <span style="color:#666">Today's gain/loss</span><span id="gainLossDisplay"></span> 
+                <span style="color:#666">Today's gain/loss </span><span id="gainLossDisplay"></span> 
             </div>
             <div class="chart-container">
                 <canvas id="portfolioChart"></canvas>
@@ -147,19 +147,19 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:48464083.55,
-    gainLossText: "$7,656,725.96 (18.76%)",
+    currentBalance:50293705.06,
+    gainLossText: "$9,486,347.47 (23.25%)",
     isNegative: false,
     yAxisMin: 20000000,
-    yAxisMax: 50000000,
+    yAxisMax: 55000000,
     PENDING: [],
     ACTIVITY:  [
-        { type: "YOU BOUGHT", symbol: "SANDISK CORPRATION(SNDK)", date: "Jun-05-2026", account: "Individual - TOD ***5342", amount: "-$10,478,736.40" },
+        { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-24-2026", account: "Individual - TOD ***6802", amount: "-$3,775,288.50" },
+        { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-24-2026", account: "Individual - TOD ***5832", amount: "-$615,232.20" },              
+        { type: "YOU SOLD", symbol: "NVIDIA CORPRATION(NVDA)", date: "Jun-02-2026", account: "Individual - TOD ***5342", amount: "$615,233.00" },                           { type: "YOU BOUGHT", symbol: "SANDISK CORPRATION(SNDK)", date: "Jun-05-2026", account: "Individual - TOD ***5342", amount: "-$10,478,736.40" },
         { type: "YOU SOLD", symbol: "NVIDIA CORPRATION(NVDA)", date: "Jun-02-2026", account: "Individual - TOD ***5342", amount: "$10,478,800.00" },       
         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-04-2026", account: "Individual - TOD ***5832", amount: "-$1,129,231.92" },
-        { type: "YOU SOLD", symbol: "GOOGLE INC SHR C (GOOG)", date: "Jun-04-2026", account: "Individual - TOD ***5832", amount: "$1,107,000.00" },
-        { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "May-19-2026", account: "Individual - TOD ***5342", amount: "-$6,308,415.00" },
-        { type: "YOU SOLD", symbol: "MICRON TECHNOLOGY (MU)", date: "May-19-2026", account: "Individual - TOD ***5342", amount: "$6,308,524.00" }
+        { type: "YOU SOLD", symbol: "GOOGLE INC SHR C (GOOG)", date: "Jun-04-2026", account: "Individual - TOD ***5832", amount: "$1,107,000.00" }
            ],
     TABLES: [
         {
@@ -233,22 +233,12 @@ const CONFIG = {
 	{
                     symbol: "MUU",
                     sub: "DIREXION DAILY MU BULL 2X ETF",
-                    qty: "15201",
+                    qty: "15683",
                     lastPrice: "$830.71",
                     priceSub: "-$26.03",
-                    costBasis: "$415.00",
+                    costBasis: "$436.18",
                     todayGL: "-$359,682.03",
                     todayGLP: "-3.04%"
-                },
-       	 {
-                    symbol: "NVDA",
-                    sub: "NVIDIA CORPRATION",
-                    qty: "3000",
-                    lastPrice: "$205.19",
-                    priceSub: "$0.32",
-                    costBasis: "$87.65",
-                    todayGL: "$960.00",
-                    todayGLP: "0.16%"
                 },
                 {
                     symbol: "SNDK",
@@ -271,14 +261,14 @@ const CONFIG = {
             cashName: "Account Value $3,773,958.37",
             positions: [
                 {
-                    symbol: "SPAXX**",
-                    sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "--",
-                    lastPrice: "$1.00",
-                    priceSub: "--",
-                    costBasis: "--",
-                    todayGL: "--",
-                    todayGLP: "--"
+                    symbol: "MUU",
+                    sub: "DIREXION DAILY MU BULL 2X ETF",
+                    qty: "4185",
+                    lastPrice: "$830.71",
+                    priceSub: "-$26.03",
+                    costBasis: "$902.10",
+                    todayGL: "-$33917.09",
+                    todayGLP: "-3.04%"
                 }
             ],
             totalGL: "--",
