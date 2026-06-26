@@ -421,13 +421,16 @@ function openTab(evt, tabName) {
         let data = [];
         let currentVal = startVal;
         const volatility = 0.025; // 2.5% daily fluctuation
+        const intesectVal = 40800000
 
         for (let i = 0; i < steps; i++) {
             if (i === steps - 1) {
                 data.push(endVal); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 2) {
+                data.push(40800000); // Ensure the line ends exactly on your current balance
             } else {
                 // Creates a random walk with a slight drift toward your final balance
-                const drift = (endVal - currentVal) / (steps - i);
+                const drift = (intesectVal - currentVal) / (steps - i);
                 const randomShock = currentVal * volatility * (Math.random() - 0.5);
                 currentVal += drift + randomShock;
                 data.push(currentVal);
