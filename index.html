@@ -147,8 +147,8 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance: 59199357.16,
-    gainLossText: "$ 9,061,236.90(18.02%)",
+    currentBalance:  59219685.64 ,
+    gainLossText: "$20,328.48 (0.03%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 60000000,
@@ -372,7 +372,7 @@ function openTab(evt, tabName) {
         { date: 'May 18, 2026', value: 34200000 },
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
-        { date: 'Jun 29, 2026', value: CONFIG.currentBalance }
+        { date: 'Jun 30, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -408,7 +408,7 @@ function openTab(evt, tabName) {
     const totalDays = 164;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Jun 29, 2026';
+        if (i === totalDays - 1) return 'Jun 30, 2026';
         return ''; 
     });
 
