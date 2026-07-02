@@ -147,8 +147,8 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:  59219685.64 ,
-    gainLossText: "$20,328.48 (0.03%)",
+    currentBalance:   47997800.00,
+    gainLossText: "$ -11,221,885.64 (-18.95%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 60000000,
@@ -372,7 +372,8 @@ function openTab(evt, tabName) {
         { date: 'May 18, 2026', value: 34200000 },
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
-        { date: 'Jun 30, 2026', value: CONFIG.currentBalance }
+        { date: 'Jun 30, 2026', value:  59219685 },
+        { date: 'Jul 1, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -387,12 +388,14 @@ function openTab(evt, tabName) {
         for (let i = 0; i < steps; i++) {
             if (i === steps - 1) {
                 data.push(endVal); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 4) {
+            } else if (i === steps - 5) {
                 data.push(40800000); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 3) {
+            } else if (i === steps - 4) {
                 data.push(50293705); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 2) {
+            } else if (i === steps - 3) {
                 data.push(50200000); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 2) {
+                data.push(59219685); // Ensure the line ends exactly on your current balance
             } else {
                 // Creates a random walk with a slight drift toward your final balance
                 const drift = (intesectVal - currentVal) / (steps - i);
