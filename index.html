@@ -384,19 +384,27 @@ function openTab(evt, tabName) {
         let currentVal = startVal;
         const volatility = 0.025; // 2.5% daily fluctuation
         const intesectVal = 40800000
-        const daysub = 0//20260706
+        const daysub = 1//20260706
 
         for (let i = 0; i < steps; i++) {
             if (i === steps - 1) {
                 data.push(endVal); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 8) {
+            } else if (i === steps - 8- daysub) {
                 data.push(40800000); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 7) {
+            } else if (i === steps - 7- daysub) {
                 data.push(50293705); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 6) {
+            } else if (i === steps - 6- daysub) {
                 data.push(50200000); // Ensure the line ends exactly on your current balance
             } else if (i === steps - 5 - daysub) {
                 data.push(59219685); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 4 - daysub) {
+                data.push( 47997800); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 3 - daysub) {
+                data.push( 50256520); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 2 - daysub) {
+                data.push( 50256520); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 1 - daysub) {
+                data.push( 50256520); // Ensure the line ends exactly on your current balance
             } else {
                 // Creates a random walk with a slight drift toward your final balance
                 const drift = (intesectVal - currentVal) / (steps - i);
@@ -412,7 +420,7 @@ function openTab(evt, tabName) {
     const totalDays = 191;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Jul 6, 2026';
+        if (i === totalDays - 1) return 'Jul 8, 2026';
         return ''; 
     });
 
