@@ -147,13 +147,23 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:    50256520.00,
-    gainLossText: "$ 0.01 (0.00%)",
+    currentBalance:      56721663.75 ,
+    gainLossText: "$   4,922,368.75 (9.50%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 60000000,
     PENDING: [],
     ACTIVITY:  [
+         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-08-2026", account: "Individual - TOD ***5832", amount: "-$3,280,130.00" },
+         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-08-2026", account: "Individual - TOD ***5342", amount: "-$35,423,430.00" },
+         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-08-2026", account: "Joint WROS-TOD ***6802", amount: "-$3,599,100.00" },
+         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-08-2026", account: "ROTH IRA ***3842", amount: "-$1,290,338.00" },
+         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-08-2026", account: "ROLLOVER IRA ***9484", amount: "-$6,536,572.00" },         
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "Individual - TOD ***5832", amount: "$3,280,540.00" },   
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "Individual - TOD ***5342", amount: "$3,724,280.00" },   
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "Joint WROS-TOD ***6802", amount: "$3,724,650.00" },   
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "ROTH IRA ***3842", amount: "$1,290,500.00" }, 
+        { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "ROLLOVER IRA ***9484", amount: "$6,537,050.00" },   
         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-29-2026", account: "Individual - TOD ***5832", amount: "-$2,049,380.00" },
         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-29-2026", account: "Individual - TOD ***5342", amount: "-$34,229,720.00" },
         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-29-2026", account: "Joint WROS-TOD ***6802", amount: "-$3,599,100.00" },
@@ -165,11 +175,7 @@ const CONFIG = {
         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-25-2026", account: "Individual - TOD ***5832", amount: "-$18,543,579.20" },   
         { type: "YOU SOLD", symbol: "INVESCO QQQ TRUST(QQQ)", date: "Jun-25-2026", account: "ROTH IRA ***3842", amount: "$1,208,533.06" },
         { type: "YOU SOLD", symbol: "SPDR S&P 500 ETF Trust(SPY)", date: "Jun-25-2026", account: "ROLLOVER IRA ***9484", amount: "$6,316,448.60" },                        { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-24-2026", account: "Individual - TOD ***6802", amount: "-$3,775,288.50" },
-        { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-24-2026", account: "Individual - TOD ***5832", amount: "-$615,232.20" },              
-        { type: "YOU SOLD", symbol: "NVIDIA CORPRATION(NVDA)", date: "Jun-02-2026", account: "Individual - TOD ***5342", amount: "$615,233.00" },                               { type: "YOU BOUGHT", symbol: "SANDISK CORPRATION(SNDK)", date: "Jun-05-2026", account: "Individual - TOD ***5342", amount: "-$10,478,736.40" },
-        { type: "YOU SOLD", symbol: "NVIDIA CORPRATION(NVDA)", date: "Jun-02-2026", account: "Individual - TOD ***5342", amount: "$10,478,800.00" },       
-        { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-04-2026", account: "Individual - TOD ***5832", amount: "-$1,129,231.92" },
-        { type: "YOU SOLD", symbol: "GOOGLE INC SHR C (GOOG)", date: "Jun-04-2026", account: "Individual - TOD ***5832", amount: "$1,107,000.00" }
+        { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jun-24-2026", account: "Individual - TOD ***5832", amount: "-$615,232.20" }
            ],
     TABLES: [
         {
@@ -180,9 +186,19 @@ const CONFIG = {
             //cashDesc: "HELD IN MONEY MARKET",
             positions: [
                	{
+                    symbol: "MUU",
+                    sub: "DIREXION DAILY MU BULL 2X ETF",
+                    qty: "4985",
+                    lastPrice: "$1048.37",
+                    priceSub: "$28.35",
+                    costBasis: "$658.00",
+                    todayGL: "$104498.1",
+                    todayGLP: "2.78%"
+                },
+               	{
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "--",
+                    qty: "410",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -201,9 +217,19 @@ const CONFIG = {
             //cashDesc: "HELD IN MONEY MARKET",
             positions: [
                	{
+                    symbol: "MUU",
+                    sub: "DIREXION DAILY MU BULL 2X ETF",
+                    qty: "53835",
+                    lastPrice: "$1048.37",
+                    priceSub: "$28.35",
+                    costBasis: "$658.00",
+                    todayGL: "$104498.1",
+                    todayGLP: "2.78%"
+                },
+               	{
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "--",
+                    qty: "350",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -220,10 +246,20 @@ const CONFIG = {
             title: "Joint WROS-TOD X67896802",
             cashName: "Account Value $3,724,650.00",
             positions: [
-               	{
+                {
+                    symbol: "MUU",
+                    sub: "DIREXION DAILY MU BULL 2X ETF",
+                    qty: "5660",
+                    lastPrice: "$1048.37",
+                    priceSub: "$28.35",
+                    costBasis: "$658.00",
+                    todayGL: "$104498.1",
+                    todayGLP: "2.78%"
+                }, 
+          	{
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "--",
+                    qty: "370",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -240,9 +276,19 @@ const CONFIG = {
             cashName: "Account Value $1,290,500.00",
             positions: [
                	{
+                    symbol: "MUU",
+                    sub: "DIREXION DAILY MU BULL 2X ETF",
+                    qty: "1961",
+                    lastPrice: "$1048.37",
+                    priceSub: "$28.35",
+                    costBasis: "$658.00",
+                    todayGL: "$104498.1",
+                    todayGLP: "2.78%"
+                },
+               	{
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "--",
+                    qty: "162",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -259,9 +305,19 @@ const CONFIG = {
             cashName: "Account Value $6,537,050.00",
             positions: [
                	{
+                    symbol: "MUU",
+                    sub: "DIREXION DAILY MU BULL 2X ETF",
+                    qty: "9934",
+                    lastPrice: "$1048.37",
+                    priceSub: "$28.35",
+                    costBasis: "$658.00",
+                    todayGL: "$104498.1",
+                    todayGLP: "2.78%"
+                },
+               	{
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "--",
+                    qty: "478",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -373,7 +429,7 @@ function openTab(evt, tabName) {
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
         { date: 'Jun 30, 2026', value:  59219685 },
-        { date: 'Jul 6, 2026', value: CONFIG.currentBalance }
+        { date: 'Jul 14, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -384,7 +440,7 @@ function openTab(evt, tabName) {
         let currentVal = startVal;
         const volatility = 0.025; // 2.5% daily fluctuation
         const intesectVal = 40800000
-        const daysub = 1//20260706
+        const daysub = 5//20260706
 
         for (let i = 0; i < steps; i++) {
             if (i === steps - 1) {
@@ -420,7 +476,7 @@ function openTab(evt, tabName) {
     const totalDays = 191;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Jul 8, 2026';
+        if (i === totalDays - 1) return 'Jul 14, 2026';
         return ''; 
     });
 
