@@ -147,8 +147,8 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:      56721663.75 ,
-    gainLossText: "$   4,922,368.75 (9.50%)",
+    currentBalance:       53352753.79 ,
+    gainLossText: "$   -3,368,909.96 (-5.94%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 60000000,
@@ -440,7 +440,7 @@ function openTab(evt, tabName) {
         let currentVal = startVal;
         const volatility = 0.025; // 2.5% daily fluctuation
         const intesectVal = 40800000
-        const daysub = 5//20260706
+        const daysub = 6//20260706
 
         for (let i = 0; i < steps; i++) {
             if (i === steps - 1) {
@@ -476,7 +476,7 @@ function openTab(evt, tabName) {
     const totalDays = 191;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Jul 14, 2026';
+        if (i === totalDays - 1) return 'Jul 15, 2026';
         return ''; 
     });
 
