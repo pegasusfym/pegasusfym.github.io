@@ -154,6 +154,11 @@ const CONFIG = {
     yAxisMax: 65000000,
     PENDING: [],
     ACTIVITY:  [
+          { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Individual - TOD ***5832", amount: "$3,737,649.42" },   
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Individual - TOD ***5342", amount: "$40,462,482.9" },   
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Joint WROS-TOD ***6802", amount: "$4,243,655.44" },   
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "ROTH IRA ***3842", amount: "$1,470,316.98" }, 
+        { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "ROLLOVER IRA ***9484", amount: "$7,447,970.00" },   
          { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-21-2026", account: "Individual - TOD ***5342", amount: "-$38,099,014.00" },
          { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-15-2026", account: "Individual - TOD ***5832", amount: "-$3,527,853.12" },
          { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-15-2026", account: "Joint WROS-TOD ***6802", amount: "-$4,005,555.84" },
@@ -377,7 +382,7 @@ function openTab(evt, tabName) {
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
         { date: 'Jun 30, 2026', value:  59219685 },
-        { date: 'Jul 29, 2026', value: CONFIG.currentBalance }
+        { date: 'Jul 31, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -388,7 +393,7 @@ function openTab(evt, tabName) {
         let currentVal = startVal;
         const volatility = 0.025; // 2.5% daily fluctuation
         const intesectVal = 40800000
-        const daysub = 10//20260706
+        const daysub = 14//20260706
 
         for (let i = 0; i < steps; i++) {
             if (i === steps - 1) {
@@ -409,24 +414,32 @@ function openTab(evt, tabName) {
                 data.push( 53697213); // Ensure the line ends exactly on your current balance
             } else if (i === steps - 1 - daysub) {
                 data.push( 58400386); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 10 ) {
+            } else if (i === steps - 14 ) {
                 data.push(  53697213); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 9 ) {
+            } else if (i === steps - 13 ) {
                 data.push(  51799295); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 8 ) {
+            } else if (i === steps - 12 ) {
                 data.push(  56721663); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 7 ) {
+            } else if (i === steps - 11 ) {
                 data.push(  53448045); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 6 ) {
+            } else if (i === steps - 10 ) {
                 data.push(  51816737); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 5 ) {
+            } else if (i === steps - 9 ) {
                 data.push( 52355501); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 4 ) {
+            } else if (i === steps - 8 ) {
                 data.push( 60062583); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 3 ) {
+            } else if (i === steps - 7 ) {
                 data.push( 58609778); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 2 ) {
+            } else if (i === steps - 6 ) {
                 data.push( 62369980); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 5 ) {
+                data.push( 57362074); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 4 ) {
+                data.push( 57362074); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 3 ) {
+                data.push( 57362074); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 2 ) {
+                data.push( 57362074); // Ensure the line ends exactly on your current balance
             } else if (i === steps - 1 ) {
                 data.push( 57362074); // Ensure the line ends exactly on your current balance
             } else {
