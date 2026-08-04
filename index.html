@@ -147,14 +147,16 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:       57692163.41,
-    gainLossText: "$   0 (0.00%)",
+    currentBalance:       57887463.41,
+    gainLossText: "$   195,300 (0.34%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 65000000,
     PENDING: [],
     ACTIVITY:  [
-          { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Individual - TOD ***5832", amount: "$3,737,649.42" },   
+         { type: "YOU BOUGHT", symbol: "ALPHABET INC CAP STK CL C(GOOG)", date: "Aug-03-2026", account: "Individual - TOD ***5342", amount: "-$3,640,000.00" }, 
+         { type: "YOU BOUGHT", symbol: "INVESCO QQQ TRUST(QQQ)", date: "Aug-03-2026", account: "ROLLOVER IRA ***9484", amount: "-$6,883,500.00" },  
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Individual - TOD ***5832", amount: "$3,737,649.42" },   
          { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Individual - TOD ***5342", amount: "$40,462,482.9" },   
          { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Joint WROS-TOD ***6802", amount: "$4,243,655.44" },   
          { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "ROTH IRA ***3842", amount: "$1,470,316.98" }, 
@@ -174,11 +176,6 @@ const CONFIG = {
          { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-08-2026", account: "Joint WROS-TOD ***6802", amount: "-$3,599,100.00" },
          { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-08-2026", account: "ROTH IRA ***3842", amount: "-$1,290,338.00" },
          { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-08-2026", account: "ROLLOVER IRA ***9484", amount: "-$6,536,572.00" },         
-         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "Individual - TOD ***5832", amount: "$3,280,540.00" },   
-         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "Individual - TOD ***5342", amount: "$3,724,280.00" },   
-         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "Joint WROS-TOD ***6802", amount: "$3,724,650.00" },   
-         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "ROTH IRA ***3842", amount: "$1,290,500.00" }, 
-        { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-02-2026", account: "ROLLOVER IRA ***9484", amount: "$6,537,050.00" },   
            ],
     TABLES: [
         {
@@ -189,9 +186,19 @@ const CONFIG = {
             //cashDesc: "HELD IN MONEY MARKET",
             positions: [
                	{
+                    symbol: "GOOG",
+                    sub: "ALPHABET INC CAP STK CL C",
+                    qty: "10000",
+                    lastPrice: "$372.47",
+                    priceSub: "$7.81",
+                    costBasis: "$364.66",
+                    todayGL: "$78100.00",
+                    todayGLP: "2.24%"
+                },
+                {
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "3,759,157.63",
+                    qty: "112,557.63",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -199,8 +206,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "0.00",
-            totalGLP: "0.00%"
+            totalGL: "78100.00",
+            totalGLP: "2.08%"
         },     
         {
             id: "table2_container",
@@ -268,9 +275,19 @@ const CONFIG = {
             cashName: "Account Value $7,490,829.16",
             positions: [
                	{
+                    symbol: "QQQ",
+                    sub: "INVESCO QQQ TRUST ",
+                    qty: "10000",
+                    lastPrice: "$700.07",
+                    priceSub: "$12.72",
+                    costBasis: "$688.35",
+                    todayGL: "$127200.00",
+                    todayGLP: "1.56%"
+                },
+                {
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "7,490,829.16",
+                    qty: "607,329.16",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -278,8 +295,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "0.00",
-            totalGLP: "0.00%"
+            totalGL: "127200.00",
+            totalGLP: "1.56%"
         }
     ]
 };
@@ -382,7 +399,7 @@ function openTab(evt, tabName) {
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
         { date: 'Jun 30, 2026', value:  59219685 },
-        { date: 'Jul 31, 2026', value: CONFIG.currentBalance }
+        { date: 'Aug 03, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -393,55 +410,57 @@ function openTab(evt, tabName) {
         let currentVal = startVal;
         const volatility = 0.025; // 2.5% daily fluctuation
         const intesectVal = 40800000
-        const daysub = 14//20260706
+        const daysub = 0//20260706
 
         for (let i = 0; i < steps; i++) {
             if (i === steps - 1) {
                 data.push(endVal); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 8- daysub) {
+            } else if (i === steps - 23- daysub) {
                 data.push(40800000); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 7- daysub) {
+            } else if (i === steps - 22- daysub) {
                 data.push(50293705); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 6- daysub) {
+            } else if (i === steps - 21- daysub) {
                 data.push(50200000); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 5 - daysub) {
+            } else if (i === steps - 20 - daysub) {
                 data.push(59219685); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 4 - daysub) {
+            } else if (i === steps - 19 - daysub) {
                 data.push( 47997800); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 3 - daysub) {
+            } else if (i === steps - 18 - daysub) {
                 data.push( 50256520); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 2 - daysub) {
+            } else if (i === steps - 17 - daysub) {
                 data.push( 53697213); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 1 - daysub) {
+            } else if (i === steps - 16 - daysub) {
                 data.push( 58400386); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 14 ) {
+            } else if (i === steps - 15 - daysub) {
                 data.push(  53697213); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 13 ) {
+            } else if (i === steps - 14 - daysub) {
                 data.push(  51799295); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 12 ) {
+            } else if (i === steps - 13 - daysub) {
                 data.push(  56721663); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 11 ) {
+            } else if (i === steps - 12 - daysub) {
                 data.push(  53448045); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 10 ) {
+            } else if (i === steps - 11 - daysub) {
                 data.push(  51816737); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 9 ) {
+            } else if (i === steps - 10 - daysub) {
                 data.push( 52355501); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 8 ) {
+            } else if (i === steps - 9 - daysub) {
                 data.push( 60062583); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 7 ) {
+            } else if (i === steps - 8 - daysub) {
                 data.push( 58609778); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 6 ) {
+            } else if (i === steps - 7 - daysub) {
                 data.push( 62369980); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 5 ) {
+            } else if (i === steps - 6 - daysub) {
                 data.push( 57362074); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 4 ) {
+            } else if (i === steps - 5 - daysub) {
                 data.push( 57362074); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 3 ) {
+            } else if (i === steps - 4 - daysub) {
                 data.push( 57362074); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 2 ) {
+            } else if (i === steps - 3 - daysub) {
                 data.push( 57362074); // Ensure the line ends exactly on your current balance
-            } else if (i === steps - 1 ) {
+            } else if (i === steps - 2 - daysub) {
                 data.push( 57362074); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 1 - daysub) {
+                data.push( 57858763); // Ensure the line ends exactly on your current balance
             } else {
                 // Creates a random walk with a slight drift toward your final balance
                 const drift = (intesectVal - currentVal) / (steps - i);
@@ -457,7 +476,7 @@ function openTab(evt, tabName) {
     const totalDays = 191;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Jul 29, 2026';
+        if (i === totalDays - 1) return 'Aug 03, 2026';
         return ''; 
     });
 
