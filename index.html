@@ -147,8 +147,8 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:       57887463.41,
-    gainLossText: "$   195,300 (0.34%)",
+    currentBalance:       57927063.41,
+    gainLossText: "$   52,300 (0.09%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 65000000,
@@ -189,11 +189,11 @@ const CONFIG = {
                     symbol: "GOOG",
                     sub: "ALPHABET INC CAP STK CL C",
                     qty: "10000",
-                    lastPrice: "$372.47",
-                    priceSub: "$7.81",
+                    lastPrice: "$353.74",
+                    priceSub: "-$3.15",
                     costBasis: "$364.66",
-                    todayGL: "$78100.00",
-                    todayGLP: "2.24%"
+                    todayGL: "-$31500.00",
+                    todayGLP: "-0.86%"
                 },
                 {
                     symbol: "SPAXX**",
@@ -206,8 +206,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "78100.00",
-            totalGLP: "2.08%"
+            totalGL: "-$31500.00",
+            totalGLP: "-0.84%"
         },     
         {
             id: "table2_container",
@@ -278,11 +278,11 @@ const CONFIG = {
                     symbol: "QQQ",
                     sub: "INVESCO QQQ TRUST ",
                     qty: "10000",
-                    lastPrice: "$700.07",
-                    priceSub: "$12.72",
+                    lastPrice: "$723.03",
+                    priceSub: "$8.38",
                     costBasis: "$688.35",
-                    todayGL: "$127200.00",
-                    todayGLP: "1.56%"
+                    todayGL: "$83800.00",
+                    todayGLP: "1.10%"
                 },
                 {
                     symbol: "SPAXX**",
@@ -295,8 +295,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "127200.00",
-            totalGLP: "1.56%"
+            totalGL: "$83800.00",
+            totalGLP: "1.08%"
         }
     ]
 };
@@ -399,7 +399,7 @@ function openTab(evt, tabName) {
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
         { date: 'Jun 30, 2026', value:  59219685 },
-        { date: 'Aug 03, 2026', value: CONFIG.currentBalance }
+        { date: 'Aug 07, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -461,6 +461,14 @@ function openTab(evt, tabName) {
                 data.push( 57362074); // Ensure the line ends exactly on your current balance
             } else if (i === steps - 1 - daysub) {
                 data.push( 57858763); // Ensure the line ends exactly on your current balance
+            } else if (i === steps - 0 - daysub) {
+                data.push( 57858763); // Ensure the line ends exactly on your current balance
+            } else if (i === steps + 1 - daysub) {
+                data.push( 58154063); // Ensure the line ends exactly on your current balance
+            } else if (i === steps + 2 - daysub) {
+                data.push( 57936363); // Ensure the line ends exactly on your current balance
+            } else if (i === steps + 3 - daysub) {
+                data.push( 57874763); // Ensure the line ends exactly on your current balance
             } else {
                 // Creates a random walk with a slight drift toward your final balance
                 const drift = (intesectVal - currentVal) / (steps - i);
@@ -476,7 +484,7 @@ function openTab(evt, tabName) {
     const totalDays = 191;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Aug 03, 2026';
+        if (i === totalDays - 1) return 'Aug 07, 2026';
         return ''; 
     });
 
