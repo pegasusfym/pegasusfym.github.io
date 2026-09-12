@@ -147,8 +147,8 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:       58746823.99,
-    gainLossText: "$   106,928.23 (0.18%)",
+    currentBalance:       58721655.88,
+    gainLossText: "$   103,651.78 (0.56%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 65000000,
@@ -178,6 +178,16 @@ const CONFIG = {
             //cashDesc: "HELD IN MONEY MARKET",
             positions: [
                	{
+                    symbol: "AAOX",
+                    sub: "Tradr 2X Long Aaoi Daily ETF",
+                    qty: "87336.245",
+                    lastPrice: "$13.11",
+                    priceSub: "$2.28",
+                    costBasis: "$11.45",
+                    todayGL: "$144,978.16",
+                    todayGLP: "14.50%"
+                },
+                {
                     symbol: "GOOG",
                     sub: "ALPHABET INC CAP STK CL C",
                     qty: "10000",
@@ -421,7 +431,7 @@ function openTab(evt, tabName) {
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
         { date: 'Jun 30, 2026', value:  59219685 },
-        { date: 'Aug 20, 2026', value: CONFIG.currentBalance }
+        { date: 'Sep 11, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -520,7 +530,7 @@ function openTab(evt, tabName) {
     const totalDays = 191;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Aug 20, 2026';
+        if (i === totalDays - 1) return 'Sep 11, 2026';
         return ''; 
     });
 
