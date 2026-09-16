@@ -147,8 +147,8 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:       58721655.88,
-    gainLossText: "$   103,651.78 (0.56%)",
+    currentBalance:       58211549.18,
+    gainLossText: "$   -510,106.70 (-0.87%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 65000000,
@@ -177,25 +177,15 @@ const CONFIG = {
             //cashName: "Cash",
             //cashDesc: "HELD IN MONEY MARKET",
             positions: [
-               	{
-                    symbol: "AAOX",
-                    sub: "Tradr 2X Long Aaoi Daily ETF",
-                    qty: "87336.245",
-                    lastPrice: "$13.11",
-                    priceSub: "$2.28",
-                    costBasis: "$11.45",
-                    todayGL: "$144,978.16",
-                    todayGLP: "14.50%"
-                },
                 {
                     symbol: "GOOG",
                     sub: "ALPHABET INC CAP STK CL C",
                     qty: "10000",
-                    lastPrice: "$341.70",
-                    priceSub: "$0.42",
+                    lastPrice: "$341.43",
+                    priceSub: "-$4.28",
                     costBasis: "$364.66",
-                    todayGL: "$4200.00",
-                    todayGLP: "0.12%"
+                    todayGL: "-$42800.00",
+                    todayGLP: "-1.24%"
                 },
                 {
                     symbol: "SPAXX**",
@@ -208,8 +198,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "$4200.00",
-            totalGLP: "0.12%"
+            totalGL: "-$42800.00",
+            totalGLP: "-1.24%"
         },     
         {
             id: "table2_container",
@@ -222,11 +212,11 @@ const CONFIG = {
                     symbol: "MUU",
                     sub: "DIREXION DAILY MU BULL 2X ETF",
                     qty: "130000",
-                    lastPrice: "$411.50",
-                    priceSub: "-$0.30",
+                    lastPrice: "$28.30",
+                    priceSub: "$0.16",
                     costBasis: "$29.82",
-                    todayGL: "-$39000.00",
-                    todayGLP: "-1.01%"
+                    todayGL: "$20800.00",
+                    todayGLP: "0.57%"
                 },
                 {
                     symbol: "SPAXX**",
@@ -239,8 +229,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "-39000.00",
-            totalGLP: "-0.09%"
+            totalGL: "20800.00",
+            totalGLP: "0.57%"
         },
 
         {
@@ -281,11 +271,11 @@ const CONFIG = {
                     symbol: "SPY",
                     sub: "STATE STREET SPDR S&P 500 ETF Trust",
                     qty: "1943",
-                    lastPrice: "$769.06",
-                    priceSub: "$1.61",
+                    lastPrice: "$757.39",
+                    priceSub: "-$3.49",
                     costBasis: "$761.00",
-                    todayGL: "$3128.23",
-                    todayGLP: "0.21%"
+                    todayGL: "-$6781.07",
+                    todayGLP: "-0.46%"
                 },
                 {
                     symbol: "SPAXX**",
@@ -298,8 +288,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "3128.23",
-            totalGLP: "0.21%"
+            totalGL: "-$6781.07",
+            totalGLP: "-0.46%"
         },
         {
             id: "table5_container",
@@ -310,11 +300,11 @@ const CONFIG = {
                     symbol: "QQQ",
                     sub: "INVESCO QQQ TRUST ",
                     qty: "10000",
-                    lastPrice: "$723.03",
-                    priceSub: "-$1.43",
+                    lastPrice: "$704.54",
+                    priceSub: "-$4.64",
                     costBasis: "$688.35",
-                    todayGL: "-$14300.00",
-                    todayGLP: "-0.18%"
+                    todayGL: "-$46400.00",
+                    todayGLP: "-0.65%"
                 },
                 {
                     symbol: "SPAXX**",
@@ -327,8 +317,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "-$14300.00",
-            totalGLP: "-0.18%"
+            totalGL: "-$46400.00",
+            totalGLP: "-0.65%"
         }
     ]
 };
@@ -431,7 +421,7 @@ function openTab(evt, tabName) {
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
         { date: 'Jun 30, 2026', value:  59219685 },
-        { date: 'Sep 11, 2026', value: CONFIG.currentBalance }
+        { date: 'Sep 15, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -530,7 +520,7 @@ function openTab(evt, tabName) {
     const totalDays = 191;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Sep 11, 2026';
+        if (i === totalDays - 1) return 'Sep 15, 2026';
         return ''; 
     });
 
