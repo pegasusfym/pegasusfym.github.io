@@ -147,50 +147,29 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:       58211549.18,
-    gainLossText: "$   -510,106.70 (-0.87%)",
+    currentBalance:       60279765.41,
+    gainLossText: "$   1,309,774.02 (2.22%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 65000000,
     PENDING: [],
     ACTIVITY:  [
-         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Aug-19-2026", account: "Individual - TOD ***5342", amount: "$-2,002,000.00" },   
-         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Aug-13-2026", account: "Individual - TOD ***5342", amount: "$-1,860,000.00" },   
-         { type: "YOU SOLD", symbol: "LUMENTUM HOLDINGS(LITE)", date: "Aug-12-2026", account: "Individual - TOD ***5342", amount: "$18,160,000.00" },   
-         { type: "YOU BOUGHT", symbol: "LUMENTUM HOLDINGS(LITE)", date: "Aug-07-2026", account: "Individual - TOD ***5342", amount: "$-17,803,400.00" },   
-         { type: "YOU BOUGHT", symbol: "SPDR GLD SHARE(GLD)", date: "Aug-06-2026", account: "Joint WROS-TOD ***6802", amount: "-$3,895,000.00" }, 
-         { type: "YOU BOUGHT", symbol: "STATE STREET SPDR S&P 500 ETF Trust(SPY)", date: "Aug-04-2026", account: "ROTH IRA ***3842", amount: "-$1,478,623.00" }, 
-         { type: "YOU BOUGHT", symbol: "ALPHABET INC CAP STK CL C(GOOG)", date: "Aug-03-2026", account: "Individual - TOD ***5832", amount: "-$3,640,000.00" }, 
-         { type: "YOU BOUGHT", symbol: "INVESCO QQQ TRUST(QQQ)", date: "Aug-03-2026", account: "ROLLOVER IRA ***9484", amount: "-$6,883,500.00" },  
-         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Individual - TOD ***5832", amount: "$3,737,649.42" },   
-         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Individual - TOD ***5342", amount: "$40,462,482.9" },   
-         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "Joint WROS-TOD ***6802", amount: "$4,243,655.44" },   
-         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "ROTH IRA ***3842", amount: "$1,470,316.98" }, 
-        { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-24-2026", account: "ROLLOVER IRA ***9484", amount: "$7,447,970.00" },   
-         { type: "YOU BOUGHT", symbol: "DIREXION DAILY MU BULL 2X ETF (CASH)(MUU)", date: "Jul-21-2026", account: "Individual - TOD ***5342", amount: "-$38,099,014.00" },
+         { type: "YOU SOLD", symbol: "SPY", date: "Sep-22-2026", account: "ROTH IRA ***3842", amount: "$1,505,979.88" },   
+         { type: "YOU SOLD", symbol: "GLD", date: "Sep-22-2026", account: "Joint WROS-TOD ***6802", amount: "$4,373,075.45" },  
+         { type: "YOU SOLD", symbol: "GOOG", date: "Sep-22-2026", account: "Individual - TOD ***5832", amount: "$3,692,557.63" },  
            ],
     TABLES: [
         {
             id: "table1_container",
             title: "Individual WROS-TOD X64905832",
-            cashName: "Account Value $3,529,557.63",
+            cashName: "Account Value $3,692,557.63",
             //cashName: "Cash",
             //cashDesc: "HELD IN MONEY MARKET",
             positions: [
                 {
-                    symbol: "GOOG",
-                    sub: "ALPHABET INC CAP STK CL C",
-                    qty: "10000",
-                    lastPrice: "$341.43",
-                    priceSub: "-$4.28",
-                    costBasis: "$364.66",
-                    todayGL: "-$42800.00",
-                    todayGLP: "-1.24%"
-                },
-                {
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "112,557.63",
+                    qty: "3,692,557.63",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -198,8 +177,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "-$42800.00",
-            totalGLP: "-1.24%"
+            totalGL: "$0.00",
+            totalGLP: "0.00%"
         },     
         {
             id: "table2_container",
@@ -212,11 +191,11 @@ const CONFIG = {
                     symbol: "MUU",
                     sub: "DIREXION DAILY MU BULL 2X ETF",
                     qty: "130000",
-                    lastPrice: "$28.30",
-                    priceSub: "$0.16",
+                    lastPrice: "$38.92",
+                    priceSub: "$3.56",
                     costBasis: "$29.82",
-                    todayGL: "$20800.00",
-                    todayGLP: "0.57%"
+                    todayGL: "$462800.00",
+                    todayGLP: "10.08%"
                 },
                 {
                     symbol: "SPAXX**",
@@ -229,8 +208,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "20800.00",
-            totalGLP: "0.57%"
+            totalGL: "462800.00",
+            totalGLP: "10.07%"
         },
 
         {
@@ -238,20 +217,10 @@ const CONFIG = {
             title: "Joint WROS-TOD X67896802",
             cashName: "Account Value $4,511,475.45",
             positions: [
-          	{
-                    symbol: "GLD",
-                    sub: "SPDR GLD SHARE",
-                    qty: "10000",
-                    lastPrice: "$413.84",
-                    priceSub: "$15.29",
-                    costBasis: "$389.50",
-                    todayGL: "$152900.00",
-                    todayGLP: "3.84%"
-                },
                 {
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "373,075.45",
+                    qty: "4,373,075.45",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -265,22 +234,12 @@ const CONFIG = {
         {
             id: "table4_container",
             title: "ROTH IRA 215893842",
-            cashName: "Account Value $1,494,438.46",
+            cashName: "Account Value $1,505,979.88",
             positions: [
-               	{
-                    symbol: "SPY",
-                    sub: "STATE STREET SPDR S&P 500 ETF Trust",
-                    qty: "1943",
-                    lastPrice: "$757.39",
-                    priceSub: "-$3.49",
-                    costBasis: "$761.00",
-                    todayGL: "-$6781.07",
-                    todayGLP: "-0.46%"
-                },
                 {
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "154.88",
+                    qty: "1,505,979.88",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -288,8 +247,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "-$6781.07",
-            totalGLP: "-0.46%"
+            totalGL: "$0.00",
+            totalGLP: "0.00%"
         },
         {
             id: "table5_container",
@@ -300,11 +259,11 @@ const CONFIG = {
                     symbol: "QQQ",
                     sub: "INVESCO QQQ TRUST ",
                     qty: "10000",
-                    lastPrice: "$704.54",
-                    priceSub: "-$4.64",
+                    lastPrice: "$747.46",
+                    priceSub: "$5.99",
                     costBasis: "$688.35",
-                    todayGL: "-$46400.00",
-                    todayGLP: "-0.65%"
+                    todayGL: "$59900.00",
+                    todayGLP: "0.81%"
                 },
                 {
                     symbol: "SPAXX**",
@@ -317,8 +276,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "-$46400.00",
-            totalGLP: "-0.65%"
+            totalGL: "$59900.00",
+            totalGLP: "0.81%"
         }
     ]
 };
@@ -421,7 +380,7 @@ function openTab(evt, tabName) {
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
         { date: 'Jun 30, 2026', value:  59219685 },
-        { date: 'Sep 15, 2026', value: CONFIG.currentBalance }
+        { date: 'Sep 22, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -517,10 +476,10 @@ function openTab(evt, tabName) {
     }
 
     // Setup X-Axis Labels (Approx 164 days between Dec 31, 2025 and Jun 12, 2026)
-    const totalDays = 191;
+    const totalDays = 281;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Sep 15, 2026';
+        if (i === totalDays - 1) return 'Sep 22, 2026';
         return ''; 
     });
 
