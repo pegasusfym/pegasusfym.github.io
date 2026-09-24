@@ -147,13 +147,15 @@ const CONFIG = {
     topImageSrc: "Top.png",
     bottomImageSrc: "Bottom.png",
     activityImageSrc: "IMG_E2202.JPG",
-    currentBalance:       60279765.41,
-    gainLossText: "$   1,309,774.02 (2.22%)",
+    currentBalance:       60285565.41,
+    gainLossText: "$   0.00 (0.00%)",
     isNegative: false,
     yAxisMin: 20000000,
     yAxisMax: 65000000,
     PENDING: [],
     ACTIVITY:  [
+         { type: "YOU SOLD", symbol: "DIREXION DAILY MU BULL 2X ETF(MUU)", date: "Sep-23-2026", account: "ROLLOVER IRA ***9484", amount: "$5,070,000.00" }, 
+         { type: "YOU SOLD", symbol: "QQQ", date: "Sep-23-2026", account: "ROLLOVER IRA ***9484", amount: "$7,763,529.16" }, 
          { type: "YOU SOLD", symbol: "SPY", date: "Sep-22-2026", account: "ROTH IRA ***3842", amount: "$1,505,979.88" },   
          { type: "YOU SOLD", symbol: "GLD", date: "Sep-22-2026", account: "Joint WROS-TOD ***6802", amount: "$4,373,075.45" },  
          { type: "YOU SOLD", symbol: "GOOG", date: "Sep-22-2026", account: "Individual - TOD ***5832", amount: "$3,692,557.63" },  
@@ -183,24 +185,14 @@ const CONFIG = {
         {
             id: "table2_container",
             title: "Individual WROS-TOD X64905342", 
-            cashName: " Account Value $41,443,223.27",
+            cashName: " Account Value $41,453,623.27",
             //cashName: "Cash",
             //cashDesc: "HELD IN MONEY MARKET",
             positions: [
-               	{
-                    symbol: "MUU",
-                    sub: "DIREXION DAILY MU BULL 2X ETF",
-                    qty: "130000",
-                    lastPrice: "$38.92",
-                    priceSub: "$3.56",
-                    costBasis: "$29.82",
-                    todayGL: "$462800.00",
-                    todayGLP: "10.08%"
-                },
                 {
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "37,566,623.00",
+                    qty: "41,453,623.27",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -208,8 +200,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "462800.00",
-            totalGLP: "10.07%"
+            totalGL: "0.00",
+            totalGLP: "0.00%"
         },
 
         {
@@ -253,22 +245,12 @@ const CONFIG = {
         {
             id: "table5_container",
             title: "ROLLOVER IRA 224389484",
-            cashName: "Account Value $7,768,129.16",
+            cashName: "Account Value $7,763,529.16",
             positions: [
-               	{
-                    symbol: "QQQ",
-                    sub: "INVESCO QQQ TRUST ",
-                    qty: "10000",
-                    lastPrice: "$747.46",
-                    priceSub: "$5.99",
-                    costBasis: "$688.35",
-                    todayGL: "$59900.00",
-                    todayGLP: "0.81%"
-                },
                 {
                     symbol: "SPAXX**",
                     sub: "FIDELITY GOVERNMENT MONEY MARKET FUND",
-                    qty: "607,329.16",
+                    qty: "7,763,529.16",
                     lastPrice: "$1.00",
                     priceSub: "--",
                     costBasis: "--",
@@ -276,8 +258,8 @@ const CONFIG = {
                     todayGLP: "--"
                 }
             ],
-            totalGL: "$59900.00",
-            totalGLP: "0.81%"
+            totalGL: "$0.00",
+            totalGLP: "0.00%"
         }
     ]
 };
@@ -380,7 +362,7 @@ function openTab(evt, tabName) {
         { date: 'Jun 24, 2026', value: 40800000 },
         { date: 'Jun 24, 2026', value: 50293705 },
         { date: 'Jun 30, 2026', value:  59219685 },
-        { date: 'Sep 22, 2026', value: CONFIG.currentBalance }
+        { date: 'Sep 24, 2026', value: CONFIG.currentBalance }
     ];
 
     // 2. REALISTIC FLUCTUATION GENERATOR
@@ -476,10 +458,10 @@ function openTab(evt, tabName) {
     }
 
     // Setup X-Axis Labels (Approx 164 days between Dec 31, 2025 and Jun 12, 2026)
-    const totalDays = 281;
+    const totalDays = 283;
     const labels = Array.from({length: totalDays}, (_, i) => {
         if (i === 0) return 'Dec 31, 2025';
-        if (i === totalDays - 1) return 'Sep 22, 2026';
+        if (i === totalDays - 1) return 'Sep 24, 2026';
         return ''; 
     });
 
